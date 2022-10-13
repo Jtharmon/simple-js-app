@@ -1,6 +1,8 @@
 let pokemonRepository = 'https://pokeapi.co/api/v2/pokemon/?limit=150';
 let pokemonList = [];
 
+
+/*eslint-disable */
 //load list
 function loadList() {
   console.log("Load List");
@@ -19,7 +21,8 @@ function loadList() {
   }).catch(function (e) {
     console.error(e);
   })
-};
+}
+/*eslint-disable*/
 
 function addListItem(pokemon) {
   console.log("AddListItem");
@@ -34,7 +37,7 @@ function addListItem(pokemon) {
   button.onclick = function () { showDetails(pokemon) };
   allPokemon.appendChild(button);
   //allPokemon.innerHTML += button
-};
+}
 
 function showDetails(pokemon) {
   let detailsUrl = pokemon.detailsUrl

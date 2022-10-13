@@ -1,0 +1,26 @@
+{
+  "name": "pokedex",
+  "version": "1.0.0",
+  "description": "list of pokemon",
+  "main": "index.html",
+  "scripts": {
+    "test": "test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Jtharmon/simple-js-app.git"
+  },
+  "keywords": [
+    "pokemon",
+    "pokedex"
+  ],
+  "author": "jon harmon",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Jtharmon/simple-js-app/issues"
+  },
+  "homepage": "https://github.com/Jtharmon/simple-js-app#readme",
+  "devDependencies": {
+    "eslint": "^8.25.0"
+  }
+}
