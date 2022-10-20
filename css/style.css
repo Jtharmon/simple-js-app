@@ -23,7 +23,7 @@
     border-color: var(--primary-color);
     cursor: pointer;
   }
-  
+   
   .button:hover,
   .button:focus{
     opacity: 0.8;
