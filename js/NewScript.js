@@ -84,5 +84,27 @@ function showDetailsModal(pokemon) {
   modalBody.appendChild(pokemonWeight);
   modalBody.appendChild(pokemonTypes);
 
+  // Add Previous button
+
+let prevButton = document.createElement('button');
+prevButton.innerText = 'Previous';
+prevButton.disabled - !prevPokemon;
+prevButton.addEventListerner('click',() => {
+  showDetailsModal(prevPokemon, prevPokemon.prevPokemon, pokemon);
+});
+
+// Add Next Button
+
+let nextButton = document.createElement('button');
+nextButton.innerText = 'Next';
+nextButton.disabled = !nextPokemon;
+nextButton.addEventListerner('click', () => {
+  showDetailsModal(nextPokemon, pokemon, nextPokemon.nextPokemon);
+});
+
+modalFooter.innerHTML = '';
+modalFooter.appendChild(prevButton);
+modalFooter.appendCHild(nextButton);
+
   console.log(modalBody)
 }
