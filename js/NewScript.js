@@ -79,10 +79,21 @@ function showDetailsModal(pokemon) {
   let pokemonTypes = document.createElement("p");
   pokemonTypes.innerText = 'Type: ' + (pokemon.types || 'N/A');
 
+  let previousButton = document.createElement('button');
+  previousButton.innerText = 'Previous';
+  previousButton.onclick = function () {
+    if (currentPokemonIndex > 0) {
+      currentPokemonIndex--;
+      showDetailsModal();
+    }
+  };
+
   modalBody.appendChild(pokemonImage);
   modalBody.appendChild(pokemonHeight);
   modalBody.appendChild(pokemonWeight);
   modalBody.appendChild(pokemonTypes);
+  modalBody.appendChild(previousButton);
+  modalBody.appendChild(nextButton);
 
   console.log(modalBody)
 }
