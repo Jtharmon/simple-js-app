@@ -33,18 +33,110 @@ body, h1, h2, h3, h4, h5 {
   background-color: #333333;
   color: #ffffff;
 }
+
+* Switch */
+.theme-switch {
+  display: inline-block;
+  position: relative;
+  margin: 20px;
+}
+
+.theme-switch .checkbox {
+  display: none;
+}
+
+.theme-switch .container {
+  width: 50px;
+  height: 25px;
+  background-color: #ccc;
+  border-radius: 25px;
+  position: relative;
+}
+
+.theme-switch .circle-container {
+  width: 25px;
+  height: 25px;
+  background-color: #fff;
+  border-radius: 50%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  transition: transform 0.3s;
+}
+
+.theme-switch .sun-moon-container {
+  width: 25px;
+  height: 25px;
+  background-color: #333;
+  border-radius: 50%;
+  position: absolute;
+  top: 0;
+  right: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.theme-switch .moon {
+  width: 10px;
+  height: 10px;
+  background-color: #fff;
+  border-radius: 50%;
+  position: relative;
+}
+
+.theme-switch .moon .spot {
+  width: 2px;
+  height: 2px;
+  background-color: #333;
+  border-radius: 50%;
+  position: absolute;
+}
+
+.theme-switch input:checked ~ .container {
+  background-color: #333;
+}
+
+.theme-switch input:checked ~ .container .circle-container {
+  transform: translateX(25px);
+}
+
+.theme-switch input:checked ~ .container .sun-moon-container {
+  background-color: #fff;
+}
+
+.theme-switch input:checked ~ .container .sun-moon-container .moon {
+  background-color: #333;
+}
+
+.theme-switch input:checked ~ .container .sun-moon-container .moon .spot {
+  background-color: #fff;
+}
+
+
 </style>
 
 </head>
 <body class="light-mode"> <!-- Default to light mode -->
 
-<!-- Top menu on small screens -->
-<header class="w3-container w3-top w3-xlarge w3-padding-16">
-  <span class="w3-left w3-padding">Gotta Catch 'em All!</span>
-  <!-- Light/Dark mode switch -->
-  <button id="mode-toggle" class="w3-right w3-button w3-white" onclick="toggleMode()">Switch Mode</button>
-</header>
-
+  <header class="w3-container w3-top w3-xlarge w3-padding-16">
+    <span class="w3-left w3-padding">Gotta Catch 'em All!</span>
+    <!-- Light/Dark mode switch -->
+    <label class="theme-switch w3-right">
+      <input type="checkbox" class="checkbox" onclick="toggleMode()">
+      <div class="container">
+        <div class="circle-container"></div>
+        <div class="sun-moon-container">
+          <div class="moon">
+            <div class="spot"></div>
+            <div class="spot"></div>
+            <div class="spot"></div>
+          </div>
+        </div>
+      </div>
+    </label>
+  </header>
+  
 <script>
 function toggleMode() {
   var body = document.body;
